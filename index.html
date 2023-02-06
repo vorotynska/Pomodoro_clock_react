@@ -10,6 +10,8 @@
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 
@@ -160,14 +162,16 @@
                         </div>
 
                         <div className='card text-center'>
-                            <h3 id='timer-label' card-title>{currentTimer}</h3>
-                            <p id='time-left' className='card-text'>{this.convertToTime(clockCount)}</p>
-
+                            <div className='clock'>
+                                <h3 id='timer-label'>{currentTimer}</h3>
+                                <p id='time-left' className='card-text'>
+                                    {this.convertToTime(clockCount)}</p>
+                            </div>
                             <div className='flex'>
-                                <button id='start_stop' className='btn btn-primary' onClick={this.handlePlayPause}>
-                                    <span>{`${isPlaying ? 'pause' : 'play'}`} </span>
+                                <button id='start_stop' className='btn btn-dar' onClick={this.handlePlayPause}>
+                                    {`${isPlaying ? 'pause' : 'play'}`}
                                 </button>
-                                <button id="reset" className='btn btn-primary' onClick={this.handleReset}>
+                                <button id="reset" className='btn btn-dar' onClick={this.handleReset}>
                                     reset
                                 </button>
                             </div>
